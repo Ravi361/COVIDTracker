@@ -1,0 +1,75 @@
+<%- include('./partials/header')%>
+<div class="jumbotron  container">
+<h1 class="text-center">Get Info of COVID-19 in INDIA</h1>
+</div>
+<div class="container">
+<div class="d-flex justify-content-around" style="height:100px">
+    <div class="bg-info text-white text-center rounded-pill" style="line-height: 100px;width: 30%;">CONFIRMED: <%=bodyp['data']['summary']['total']%></div>
+<div class="bg-success text-white text-center rounded-pill" style="line-height: 100px;width: 30%;">ACTIVE: <%=bodyp['data']['summary']['total']-bodyp['data']['summary']['deaths']-bodyp['data']['summary']['discharged']%></div>
+<div class="bg-danger text-white text-center rounded-pill" style="line-height: 100px;width: 30%;">DEATHS: <%=bodyp['data']['summary']['deaths']%></div>
+</div>
+<div class="d-flex justify-content-around" style="margin-top: 50px;">
+    <div><a class='btn btn-outline-primary' href="/typestate">STATE WISE CASES</a></div>
+    <div><a class='btn btn-outline-primary' href="/deaths">STATE WISE DEATHS</a></div>
+    <div>
+        <form class="form-inline" action="/typestate" method="POST">
+            <input class="form-control" type="text" placeholder="Enter your state" name="Name">
+            <button class="btn btn-outline-primary form-control">Find in your state</button>
+        </form>
+    </div>
+    </div>
+<div style="margin-top: 50px;">
+    <marquee><div class="h3 text-success">Government Advisory on COVID19</div></marquee>
+    <p>
+        1. Closure of all educational establishments (schools, universities etc), gyms, museums,
+cultural and social centres, swimming pools and theatres. Students should be advised
+to stay at home. Online education to be promoted.<br>
+2. Possibility of postponing exams may be explored. Ongoing exams to be conducted only
+after ensuring physical distance of one meter amongst students.<br>
+3. Encourage private sector organizations/employers to allow employees to work from
+home wherever feasible.<br>
+4. Meetings, as far as feasible, shall be done through video conferences. Minimize or
+reschedule meetings involving large number of people unless necessary.<br>
+5. Restaurants to ensure handwashing protocol and proper cleanliness of frequently
+touched surfaces. Ensure physical distancing (minimum 1metre) between tables;
+encourage open air seating where practical with adequate distancing.<br>
+6. Keep already planned weddings to a limited gathering, postpone all non-essential social
+and cultural gatherings.<br>
+7. Local authorities to have a dialogue with organizers of sporting events and competitions
+involving large gatherings and they may be advised to postpone such events.<br>
+8. Local authorities to have a dialogue with opinion leaders and religious leaders to
+regulate mass gatherings and should ensure no overcrowding/at least one metre distance
+between people. <br>
+9. Local authorities to have meeting with traders associations and other stakeholders to
+regulate hours, exhibit Do’s and Don’ts and take up a communication drive in market
+places like sabzi mandi, anaj mandi, bus depots, railway stations, post-offices etc.,
+where essential services are provided.<br>
+10. All commercial activities must keep a distance of one meter between customers.
+Measures to reduce peak hour crowding in markets.<br>
+11. Non-essential travel should be avoided. Buses, Trains and aeroplanes to maximize
+social distancing in public transport besides ensuring regular and proper disinfection of
+surfaces.<br>
+12. Hospitals to follow necessary protocol related with COVID-19 management as
+prescribed and restrict family/friends/children visiting patients in hospitals.<br>
+13. Hygiene and physical distancing has to be maintained. Shaking hands and hugging as
+a matter of greeting to be avoided.<br>
+14. Special protective measures for delivery men/ women working in online ordering
+services.<br>
+15. Keep communities informed consistently and constantly. 
+    </p>
+</div>
+<div class="d-flex justify-content-start align-items-start">
+<a class="btnsp btn btn-primary btn-lg" href="/question">Ask Questions about COVID19</a>
+<a class="btnsp btn btn-primary btn-lg" href="/question/read">Read Q and A</a>
+</div>
+<div class="text-danger h3">Must Read</div>
+<div class="row">
+    <div class="col-lg-4 col-sm-12"><img class="img-thumbnail" src="https://transformingindia.mygov.in/wp-content/uploads/2020/08/1.png"></div>
+    <div class="col-lg-4 col-sm-12"><img class="img-thumbnail" src="https://transformingindia.mygov.in/wp-content/uploads/2020/08/2.png"></div>
+    <div class="col-lg-4 col-sm-12"><img class="img-thumbnail" src="https://transformingindia.mygov.in/wp-content/uploads/2020/08/3.png"></div>
+    <div class="col-lg-4 col-sm-12"><img class="img-thumbnail" src="https://transformingindia.mygov.in/wp-content/uploads/2020/08/4.png"></div>
+    <div class="col-lg-4 col-sm-12"><img class="img-thumbnail" src="https://transformingindia.mygov.in/wp-content/uploads/2020/08/5.png"></div>
+    <div class="col-lg-4 col-sm-12"><img class="img-thumbnail" src="https://transformingindia.mygov.in/wp-content/uploads/2020/08/6.png"></div>
+</div>
+</div>
+<%- include('./partials/footer')%>

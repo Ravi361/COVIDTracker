@@ -1,0 +1,19 @@
+<%- include('../partials/header')%>
+<div class="container">
+    <div class="d-flex jumbotron justify-content-around">
+<div class='h1'>STATE WISE DEATHS</div>
+    <a class="btn btn-primary btn-lg" href="/">Go Back</a>
+</div>
+<div class="jumbotron bg-light">
+<%bodyp['data']['regional'].forEach(function(obj){%>
+    <div class='container'>
+       <%=obj['loc']%>
+       <span style="float:right;"><%=obj['deaths']%></span>
+    </div>
+<%})%>
+<div class='container'>
+    Total
+    <span style="float:right;"> <%=bodyp['data']['summary']['deaths']%></span>
+ </div>
+</div>
+<%- include('../partials/footer')%>

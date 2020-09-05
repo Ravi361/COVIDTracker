@@ -1,0 +1,20 @@
+<%- include('../partials/header')%>
+ <div class="container">
+     <div class="jumbotron d-flex justify-content-between">
+     <div class="h3">Read all FAQ's here</div>
+     <a class="btn btn-primary btn-sm align-self-start" href="/question">Leave a Question</a>
+     <a class="btn btn-primary btn-sm align-self-start" href="/">Go Back</a>
+    </div>
+     <%questions.forEach(function(question){%>
+        <div class="jumbotron">
+        <div class="d-flex justify-content-between">
+        <div><strong><%=question.author%></strong> asked:<%=question.question%></div>
+        <a class="btn btn-primary btn-sm align-self-start" href="/question/<%=question._id%>">Answer</a>
+    </div>
+        <%question.answer.forEach(function(a){%>
+        <strong><%=a.author%></strong>:<%=a.answer%><br>
+        <%})%>
+    </div>
+        <%})%>
+ </div>
+<%- include('../partials/footer')%>

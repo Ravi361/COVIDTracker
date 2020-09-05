@@ -1,0 +1,19 @@
+<%- include('../partials/header')%>
+<div class="container col-lg-4">
+<div class="jumbotron" style="margin-top: 100px;"> 
+    <div class="h3 text-center">Q: <%=question.question%></div>
+<form action="/question/<%=question._id%>" method="POST">
+    <div class="form-group">
+        <input class='form-control' type="text" name="author" placeholder="Enter your name..." required>
+    </div>
+    <div class="form-group">
+        <input class='form-control' type="text" name="answer" placeholder="Type your question..." required>
+    </div>
+    <div class="d-flex justify-content-between">
+   <button class="btn btn-primary" type="submit">Post Answer</button>
+   <a href='/question/read' class="btn btn-primary">Go Back</a>
+</div>
+</form>
+</div>
+</div>
+<%- include('../partials/footer')%>

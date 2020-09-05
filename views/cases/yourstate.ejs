@@ -1,0 +1,38 @@
+<%- include('../partials/header')%>
+<div class="container">
+<div class='jumbotron'>
+<%bodyp['data']['regional'].forEach(function(obj){%>
+       <%if(obj['loc']==Name){%>
+        <h3><%=Name%> has</h3>
+        <div class="d-flex justify-content-between">
+        <div class='h3'> TOTAL CASES :  <%=obj['totalConfirmed']%></div>
+        <div class='h3'>TOTAL DEATHS:  <%=obj['deaths']%></div>
+     <a class="btn btn-primary btn-md" href="/">Go Back</a>
+</div>
+</div>
+      <%}%>
+<%})%>
+<div class="jumbotron">
+<% var s%>
+<%for(s in b){%>
+<%if(s==Name){%>
+       <%var x%>
+       <table class="container">
+       <tr>
+              <th>Districts</th>
+              <th>Deaths</th>
+              <th>Cases</th>
+       </tr>
+               <%for(x in b[Name]["districtData"]){%>
+                            <tr>
+                                   <td><%=x%></td>
+                            <td><%=b[Name]["districtData"][x]['deceased']%></td>
+                            <td><%=b[Name]["districtData"][x]['confirmed']%></td>
+                     </tr>
+               <%}%>
+              </table>
+       <%}%>
+       <%}%>
+</div>
+</div>
+<%- include('../partials/footer')%>

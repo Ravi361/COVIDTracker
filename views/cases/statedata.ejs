@@ -1,0 +1,27 @@
+<%- include('../partials/header')%>
+<div class="container">
+   <div class="d-flex jumbotron justify-content-around">
+   <div class="h1">STATE WISE CASES</div>
+       <a class="btn btn-primary btn-lg" href="/">Go Back</a>
+</div>
+   <div class="jumbotron bg-light">
+   <table class="container">
+      <tr>
+         <td>STATE</td>
+         <td>CONFIRMED</td>
+         <td>DISCHARGED</td>
+      </tr>
+<%bodyp['data']['regional'].forEach(function(obj){%>
+            <tr>
+               <td><%=obj['loc']%></td>
+            <td><%=obj['confirmedCasesIndian']%></span></td>
+            <td><%=obj['discharged']%></td>
+            </tr>
+<%})%>
+   </table>
+<div class='container' style="border: 10px solid white;font-size: 15px;">
+   Total
+   <span style="float:right;"><%=bodyp['data']['summary']['confirmedCasesIndian']%></span>
+</div>
+</div>
+<%- include('../partials/footer')%>
